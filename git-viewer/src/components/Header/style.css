@@ -1,0 +1,18 @@
+.header {
+  height: 72px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  background-color: #0064EB;
+}
+
+.header__logo {
+  padding-left: 41px;
+}
+
+.header__search {
+  width: 100%;
+  max-width: 500px;
+  padding: 0 22px 0 22px;
+}
