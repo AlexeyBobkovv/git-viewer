@@ -1,26 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import userService from "../../../API/userService";
+import { useFetching } from "../../../hooks/useFetching,";
 import "./UserSearch.css";
-import searchIcon from "../../../assets/icons/search-icon.svg";
 
-export default function UserSearch() {
+export default function UserSearch({ setUserInfo, setPageCondition }) {
   const [search, setSearch] = useState("");
 
-  const makeRequest = (e) => {
-    e.preventDefault();
-    console.log("search :>> ", search);
-  };
+  const [fetchUser, isLoading, isError] = useFetching(async () => {
+    const response = await userService.getUserInfo(search);
+    setUserInfo(response);
+  });
+
+  useEffect(() => {
+    setPageCondition({ isLoading, isError });
+  }, [isLoading, isError, setPageCondition]);
 
   return (
-    <form>
-      {/* <form onSubmit={this.handleSubmit}> */}
-      <button type="submit" onClick={makeRequest}>
-        {/* <img src={searchIcon} alt="search-icon" /> */}
-      </button>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        fetchUser();
+      }}
+    >
+      <button type="button"></button>
       <input
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         type="text"
-        // value={this.state.value}
         placeholder="Enter GitHub username"
       />
     </form>
