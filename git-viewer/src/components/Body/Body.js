@@ -6,8 +6,7 @@ import BodyStateNoUser from "./States/NoUser";
 import Loader from "../UI/Loader/Loader";
 import BodyUserMain from "./User/UserMain";
 
-export default function Body({ userInfo, pageCondition }) {
-  console.log("pageCondition :>> ", pageCondition);
+export default function Body({ userInfo, pageCondition, userRepos }) {
   return (
     <main className="main-content">
       <div className="main-content__wrapper">
@@ -18,7 +17,7 @@ export default function Body({ userInfo, pageCondition }) {
           <BodyStateNoUser />
         )}
         {pageCondition.isLoading && <Loader />} */}
-        {userInfo && <BodyUserMain userInfo={userInfo} />}
+        {userInfo && <BodyUserMain userInfo={userInfo} userRepos={userRepos} />}
       </div>
     </main>
   );

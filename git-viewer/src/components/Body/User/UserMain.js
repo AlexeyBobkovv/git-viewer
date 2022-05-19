@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import "./User.css";
 
 import BodyUserInfo from "./Info/Info";
-import BodyUserRepos from "./Repos";
+import BodyUserRepos from "./Repos/Repos";
 
-export default function BodyUserMain({ userInfo }) {
-  const [count, setCount] = useState(0);
-
+export default function BodyUserMain({ userInfo, userRepos }) {
   return (
     <div className="user-git">
       <BodyUserInfo userInfo={userInfo} />
-      <BodyUserRepos />
+      {userRepos !== undefined && <BodyUserRepos userRepos={userRepos} />}
     </div>
   );
 }

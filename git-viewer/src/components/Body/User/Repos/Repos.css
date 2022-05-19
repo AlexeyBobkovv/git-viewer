@@ -1,0 +1,44 @@
+.repos__heading {
+  font-size: 32px;
+}
+
+.repos__list {
+  list-style: none;
+  padding: 0;
+}
+
+.repo-item {
+  width: 100%;
+  margin-bottom: 25px;
+  background: #FFFFFF;
+  border-radius: 6px;
+}
+
+.repo-item__inner {
+  padding: 24px 0 32px 24px;
+}
+
+.repo-item__name {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 16px;
+  /* identical to box height */
+  color: #0064EB;
+}
+
+.repo-item__name a {
+  text-decoration: none;
+}
+
+.repo-item__description {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+}
+/*# sourceMappingURL=Repos.css.map */
