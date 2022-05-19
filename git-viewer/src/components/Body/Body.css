@@ -1,9 +1,18 @@
 .main-content {
   height: 90.1907356948%;
-  
+}
+
+.main-content__wrapper {
+  width: 100%;
+  max-width: 1254px;
+  height: 100%;
+  margin: 0 auto;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  padding: 28px 69px 29px 56px;
 }
 
 .main-content__states {

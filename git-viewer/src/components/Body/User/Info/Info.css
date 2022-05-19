@@ -1,0 +1,56 @@
+.info__image {
+  width: 100%;
+  max-width: 291px;
+  border-radius: 50%;
+  margin-bottom: 28px;
+}
+
+.info__image img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.text__name {
+  margin-bottom: 12px;
+}
+
+.text__login-wrap {
+  margin-bottom: 25px;
+}
+
+.text__login {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #0064EB;
+  text-decoration: none;
+}
+
+.text__follow-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.text__follow-type {
+  width: 146px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.text__follow-type img {
+  width: 24px;
+  height: 24px;
+  padding-right: 8px;
+}
+
+.text__follow-type p {
+  margin: 0;
+}
+/*# sourceMappingURL=Info.css.map */
