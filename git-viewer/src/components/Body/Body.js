@@ -6,15 +6,7 @@ import BodyStateNoUser from "./States/NoUser";
 import Loader from "../UI/Loader/Loader";
 import BodyUserMain from "./User/UserMain";
 
-export default function Body({
-  userInfo,
-  pageCondition,
-  userRepos,
-  pageInfo,
-  fetchUser,
-  pageOffset,
-  setPageOffset,
-}) {
+export default function Body({ userInfo, pageCondition, userRepos }) {
   return (
     <main className="main-content">
       <div className="main-content__wrapper">
@@ -26,13 +18,7 @@ export default function Body({
         )}
         {pageCondition.isLoading && <Loader />}
         {userInfo && !pageCondition.isLoading && (
-          <BodyUserMain
-            userInfo={userInfo}
-            userRepos={userRepos}
-            fetchUser={fetchUser}
-            pageOffset={pageOffset}
-            setPageOffset={setPageOffset}
-          />
+          <BodyUserMain userInfo={userInfo} userRepos={userRepos} />
         )}
       </div>
     </main>

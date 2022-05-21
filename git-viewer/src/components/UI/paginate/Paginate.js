@@ -5,14 +5,7 @@ import NavItem from "./NavItem";
 import "./paginate.css";
 import userService from "../../../API/userService";
 
-function Paginate({
-  setRepositories,
-  userRepos,
-  fetchUser,
-  pagesLength,
-  // pageOffset,
-  // setPageOffset,
-}) {
+function Paginate({ setRepositories, pagesLength }) {
   const [pageCount, setPageCount] = useState(0);
   const [apiError, setApiError] = useState(null);
   const [pageOffset, setPageOffset] = useState(0);
@@ -23,8 +16,6 @@ function Paginate({
         "gaearon",
         pageOffset
       );
-      // setUserRepos(userReposResponse);
-      // fetchUser();
       const responseJson = await userReposResponse.clone().json();
       if (!userReposResponse.ok) {
         setApiError(responseJson.message);

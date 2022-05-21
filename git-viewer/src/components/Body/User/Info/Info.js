@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Info.css";
 
 import followersImg from "../../../../assets/icons/followers-icon.svg";
 import followingImg from "../../../../assets/icons/following-icon.svg";
 
-export default function BodyUserInfo({ userInfo }) {
-  const [count, setCount] = useState(0);
+function thousandToK(num) {
+  if (num >= 1000) {
+    return `${(num / 1000).toFixed(1)}k`;
+  }
+  return num;
+}
 
+export default function BodyUserInfo({ userInfo }) {
   const { login, avatar_url, html_url, name, followers, following } = userInfo;
 
   return (
@@ -30,13 +35,13 @@ export default function BodyUserInfo({ userInfo }) {
           <div className="text__follow-type small-text">
             <img src={followersImg} alt="" />
             <p>
-              <span>{followers}</span> followers
+              <span>{thousandToK(followers)}</span> followers
             </p>
           </div>
           <div className="text__follow-type small-text">
             <img src={followingImg} alt="" />
             <p>
-              <span>{following}</span> following
+              <span>{thousandToK(following)}</span> following
             </p>
           </div>
         </div>
