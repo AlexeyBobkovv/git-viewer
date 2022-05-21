@@ -6,18 +6,34 @@ import BodyStateNoUser from "./States/NoUser";
 import Loader from "../UI/Loader/Loader";
 import BodyUserMain from "./User/UserMain";
 
-export default function Body({ userInfo, pageCondition, userRepos }) {
+export default function Body({
+  userInfo,
+  pageCondition,
+  userRepos,
+  pageInfo,
+  fetchUser,
+  pageOffset,
+  setPageOffset,
+}) {
   return (
     <main className="main-content">
       <div className="main-content__wrapper">
-        {/* {!pageCondition.isError && !pageCondition.isLoading && (
+        {!pageCondition.isError && !pageCondition.isLoading && !userInfo && (
           <BodyStateInitial />
         )}
         {pageCondition.isError && !pageCondition.isLoading && (
           <BodyStateNoUser />
         )}
-        {pageCondition.isLoading && <Loader />} */}
-        {userInfo && <BodyUserMain userInfo={userInfo} userRepos={userRepos} />}
+        {pageCondition.isLoading && <Loader />}
+        {userInfo && !pageCondition.isLoading && (
+          <BodyUserMain
+            userInfo={userInfo}
+            userRepos={userRepos}
+            fetchUser={fetchUser}
+            pageOffset={pageOffset}
+            setPageOffset={setPageOffset}
+          />
+        )}
       </div>
     </main>
   );

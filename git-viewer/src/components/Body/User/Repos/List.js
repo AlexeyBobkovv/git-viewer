@@ -1,10 +1,11 @@
 import React from "react";
+
 import UserRepoItem from "./Item";
 
-const UserRepoList = ({ userRepos }) => {
+const UserRepoList = ({ repositories }) => {
   return (
     <ul className="repos__list">
-      {userRepos.jsonResponse.map((item) => {
+      {repositories.map((item) => {
         const { name, description, html_url } = item;
         const itemSetup = {
           name: name,
