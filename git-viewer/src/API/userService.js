@@ -11,13 +11,11 @@ export default class userService {
   }
 
   static async getUserRepos(userName, pageOffset) {
-    // const response = await fetch(`https://api.github.com/users/${userName}/repos`);
     console.log("pageOffset :>> ", pageOffset);
     const response = await fetch(
-      `https://api.github.com/users/gaearon/repos?per_page=4&page=${
+      `https://api.github.com/users/${userName}/repos?per_page=4&page=${
         pageOffset + 1
       }`
-      // `https://api.github.com/users/gaearon/repos?per_page=4&page=${pageNum}`
     );
 
     return response;

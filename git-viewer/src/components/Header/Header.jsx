@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css";
+import "./header.css";
 import logo from "../../assets/icons/git-logo.svg";
 
 import UserSearch from "../UI/input/UserSearch";
