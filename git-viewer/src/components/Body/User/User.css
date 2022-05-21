@@ -7,12 +7,12 @@
 }
 
 .user-git__info {
-  flex: 1;
+  width: 100%;
   max-width: calc(292 / 1241 * 100%);
 }
 
 .user-git__repos {
-  flex: 1;
+  width: 100%;
   max-width: calc(862 / 1241 * 100%);
 }
 
@@ -33,4 +33,29 @@
   font-size: 16px;
   line-height: 150%;
   color: #000000;
+}
+
+@media (max-width: 769px){
+  .user-git__info {
+    max-width: 35%;
+  }
+  
+  .user-git__repos {
+    max-width: 60%;
+  }
+}
+
+@media (max-width: 550px){
+  .user-git {
+    flex-direction: column;
+  }
+
+  .user-git__info {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .user-git__repos {
+    max-width: 100%;
+  }
 }

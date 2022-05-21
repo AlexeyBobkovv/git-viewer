@@ -1,5 +1,5 @@
 import React from "react";
-import "./Info.css";
+import "./info.css";
 
 import followersImg from "../../../../assets/icons/followers-icon.svg";
 import followingImg from "../../../../assets/icons/following-icon.svg";
@@ -19,11 +19,11 @@ export default function BodyUserInfo({ userInfo }) {
       <div className="info__image">
         <img src={avatar_url} alt="user-img" />
       </div>
-      <div className="info__text text">
-        <p className="text__name bold-text">{name}</p>
-        <div className="text__login-wrap">
+      <div className="info__text">
+        <p className="info__name bold-text">{name}</p>
+        <div className="info__login-wrap">
           <a
-            className="text__login"
+            className="info__login"
             href={html_url}
             target="_blank"
             rel="noreferrer"
@@ -31,14 +31,14 @@ export default function BodyUserInfo({ userInfo }) {
             {login}
           </a>
         </div>
-        <div className="text__follow-info">
-          <div className="text__follow-type small-text">
+        <div className="info__follow-info">
+          <div className="info__follow-type small-text">
             <img src={followersImg} alt="" />
             <p>
               <span>{thousandToK(followers)}</span> followers
             </p>
           </div>
-          <div className="text__follow-type small-text">
+          <div className="info__follow-type small-text">
             <img src={followingImg} alt="" />
             <p>
               <span>{thousandToK(following)}</span> following

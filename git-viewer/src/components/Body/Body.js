@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "./Body.css";
+import React from "react";
+import "./body.css";
 
 import BodyStateInitial from "./States/Inital";
 import BodyStateNoUser from "./States/NoUser";

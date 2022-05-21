@@ -1,5 +1,5 @@
 import React from "react";
-import "./User.css";
+import "./user.css";
 
 import BodyUserInfo from "./Info/Info";
 import BodyUserRepos from "./Repos/Repos";

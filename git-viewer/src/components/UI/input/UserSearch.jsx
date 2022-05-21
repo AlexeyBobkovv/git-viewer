@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import "./UserSearch.css";
+import React, { useState } from "react";
+import "./search.css";
 
 export default function UserSearch({ setSearch, fetchUser }) {
   const [searchValue, setSearchValue] = useState("");

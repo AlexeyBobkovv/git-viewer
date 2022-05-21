@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import "./Repos.css";
+import "./repos.css";
 
 import UserRepoList from "./List";
 import Paginate from "../../../UI/paginate/Paginate";

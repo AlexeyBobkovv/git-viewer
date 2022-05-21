@@ -28,7 +28,6 @@
   font-weight: 400;
   font-size: 22px;
   line-height: 140%;
-  /* or 31px */
 
   text-align: center;
 
@@ -59,4 +58,10 @@
   padding: 18px 23px;
 
   margin-bottom: 24px;
+}
+
+@media (max-width: 769px){
+  .main-content__wrapper {
+    padding: 28px 25px 29px 25px;
+  }
 }
