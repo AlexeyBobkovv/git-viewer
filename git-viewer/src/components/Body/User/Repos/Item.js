@@ -2,6 +2,7 @@ import React from "react";
 
 export default function UserRepoItem({ itemSetup }) {
   const { name, description, url } = itemSetup;
+
   return (
     <li className="repos__item repo-item">
       <div className="repo-item__inner">

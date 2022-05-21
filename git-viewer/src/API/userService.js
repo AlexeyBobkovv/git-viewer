@@ -1,9 +1,7 @@
 export default class userService {
   static async getUserInfo(userName) {
-    // const response = await fetch(`https://api.github.com/users/${userName}`);
-    const response = await fetch(`https://api.github.com/users/gaearon`);
-    // const response = await fetch(`https://api.github.com/users/gaearon`);
-    if (response.status >= 400 && response.status <= 599) {
+    const response = await fetch(`https://api.github.com/users/${userName}`);
+    if (response.status !== 200) {
       throw new Error(`There is no such users`);
     }
     const jsonResponse = await response.json();
@@ -11,7 +9,6 @@ export default class userService {
   }
 
   static async getUserRepos(userName, pageOffset) {
-    console.log("pageOffset :>> ", pageOffset);
     const response = await fetch(
       `https://api.github.com/users/${userName}/repos?per_page=4&page=${
         pageOffset + 1

@@ -9,7 +9,7 @@ export default function UserSearch({ setSearch, fetchUser }) {
       onSubmit={(e) => {
         setSearch(searchValue);
         e.preventDefault();
-        fetchUser();
+        fetchUser(searchValue);
       }}
     >
       <button type="button"></button>

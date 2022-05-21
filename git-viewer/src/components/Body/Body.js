@@ -1,25 +1,21 @@
 import React from "react";
 import "./body.css";
 
-import BodyStateInitial from "./States/Inital";
-import BodyStateNoUser from "./States/NoUser";
-import Loader from "../UI/Loader/Loader";
+import CallToPageState from "./States/CallToPageState";
 import BodyUserMain from "./User/UserMain";
 
-export default function Body({ userInfo, pageCondition, userRepos }) {
+export default function Body({ userInfo, pageCondition, search }) {
   return (
     <main className="main-content">
       <div className="main-content__wrapper">
-        {!pageCondition.isError && !pageCondition.isLoading && !userInfo && (
-          <BodyStateInitial />
-        )}
-        {pageCondition.isError && !pageCondition.isLoading && (
-          <BodyStateNoUser />
-        )}
-        {pageCondition.isLoading && <Loader />}
-        {userInfo && !pageCondition.isLoading && (
-          <BodyUserMain userInfo={userInfo} userRepos={userRepos} />
-        )}
+        <CallToPageState
+          isError={pageCondition.isError}
+          isLoading={pageCondition.isLoading}
+          isUserInfo={userInfo}
+        />
+        {userInfo && !pageCondition.isLoading && !pageCondition.isError ? (
+          <BodyUserMain userInfo={userInfo} search={search} />
+        ) : null}
       </div>
     </main>
   );

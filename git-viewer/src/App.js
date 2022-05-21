@@ -9,15 +9,13 @@ import { useFetching } from "./hooks/useFetching,";
 function App() {
   const [search, setSearch] = useState();
   const [userInfo, setUserInfo] = useState();
-  const [userRepos, setUserRepos] = useState();
-
   const [pageCondition, setPageCondition] = useState({
     isLoading: false,
     isError: false,
   });
 
-  const [fetchUser, isLoading, isError] = useFetching(async () => {
-    const response = await userService.getUserInfo(search);
+  const [fetchUser, isLoading, isError] = useFetching(async (searchValue) => {
+    const response = await userService.getUserInfo(searchValue);
     setUserInfo(response);
   });
 
@@ -28,11 +26,7 @@ function App() {
   return (
     <div className="App">
       <Header fetchUser={fetchUser} setSearch={setSearch} />
-      <Body
-        userInfo={userInfo}
-        pageCondition={pageCondition}
-        userRepos={userRepos}
-      />
+      <Body userInfo={userInfo} pageCondition={pageCondition} search={search} />
     </div>
   );
 }

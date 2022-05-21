@@ -5,15 +5,15 @@ import NavItem from "./NavItem";
 import "./paginate.css";
 import userService from "../../../API/userService";
 
-function Paginate({ setRepositories, pagesLength }) {
+function Paginate({ setRepositories, pagesLength, userName }) {
   const [pageCount, setPageCount] = useState(0);
   const [apiError, setApiError] = useState(null);
   const [pageOffset, setPageOffset] = useState(0);
 
   useEffect(() => {
-    async function name() {
+    async function setChosenPage() {
       const userReposResponse = await userService.getUserRepos(
-        "gaearon",
+        userName,
         pageOffset
       );
       const responseJson = await userReposResponse.clone().json();
@@ -21,20 +21,16 @@ function Paginate({ setRepositories, pagesLength }) {
         setApiError(responseJson.message);
         setRepositories([]);
         setPageCount(0);
-        console.log("not ok? :>> ");
         return;
       }
       setRepositories(responseJson);
       setPageCount(Math.ceil(pagesLength / 4));
     }
 
-    name();
+    setChosenPage();
   }, [pageOffset]);
 
   const handlePageChange = (event) => {
-    console.log("event.selected :>> ", event.selected);
-    // TODO Only change displayed selected page
-    // when its content is loaded in useEffect.
     setPageOffset(event.selected);
   };
 
