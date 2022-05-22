@@ -17,12 +17,14 @@ function Paginate({ setRepositories, pagesLength, userName }) {
         pageOffset
       );
       const responseJson = await userReposResponse.clone().json();
+
       if (!userReposResponse.ok) {
         setApiError(responseJson.message);
         setRepositories([]);
         setPageCount(0);
         return;
       }
+
       setRepositories(responseJson);
       setPageCount(Math.ceil(pagesLength / 4));
     }
@@ -54,7 +56,7 @@ function Paginate({ setRepositories, pagesLength, userName }) {
             breakLinkClassName="page-link"
             pageCount={pageCount}
             marginPagesDisplayed={1}
-            pageRangeDisplayed={3}
+            pageRangeDisplayed={2}
             onPageChange={handlePageChange}
             containerClassName="pagination"
             activeClassName="active"

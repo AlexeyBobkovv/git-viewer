@@ -1,7 +1,9 @@
 import React from "react";
 
+const REPO_PER_PAGE = 4;
+
 function calcNumOfLastEl(lastElNum, pageOffset, pagesLength) {
-  lastElNum = (pageOffset + 1) * 4;
+  lastElNum = (pageOffset + 1) * REPO_PER_PAGE;
   if (lastElNum > pagesLength) {
     return pagesLength;
   }
@@ -10,7 +12,7 @@ function calcNumOfLastEl(lastElNum, pageOffset, pagesLength) {
 
 export default function NavItem({ pageOffset, pagesLength }) {
   let lastElNum;
-  const firstElNum = pageOffset * 4 + 1;
+  const firstElNum = pageOffset * REPO_PER_PAGE + 1;
 
   const navInfo = `${firstElNum}-${calcNumOfLastEl(
     lastElNum,
