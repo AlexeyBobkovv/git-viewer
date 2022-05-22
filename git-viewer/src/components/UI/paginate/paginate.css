@@ -78,11 +78,19 @@ list-style: none;
 
 .arrow-button_right .page-link {
   transform: rotate(45deg);
-  margin-left: 29px;
+  margin: 10px;
 }
+.arrow-button_right {
+  margin-left: 10px;
+}
+
 .arrow-button_left .page-link {
   transform: rotate(-135deg);
-  margin-right: 29px;
+  margin: 10px;
+}
+
+.arrow-button_left {
+  margin-right: 10px;
 }
 
 .arrow-button.disabled .page-link {
