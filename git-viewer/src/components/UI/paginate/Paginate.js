@@ -40,13 +40,13 @@ function Paginate({ setRepositories, pagesLength, userName }) {
         <div className="repos__pagination">
           <NavItem pageOffset={pageOffset} pagesLength={pagesLength} />
           <ReactPaginate
-            previousLabel="<"
-            nextLabel=">"
+            previousLabel=""
+            nextLabel=""
             pageClassName="page-item"
             pageLinkClassName="page-link"
-            previousClassName="page-button"
+            previousClassName="arrow-button arrow-button_left"
             previousLinkClassName="page-link"
-            nextClassName="page-button"
+            nextClassName="arrow-button arrow-button_right"
             nextLinkClassName="page-link"
             disabledClassName="disabled"
             breakLabel="..."

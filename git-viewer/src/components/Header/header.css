@@ -1,10 +1,19 @@
 .header {
   height: calc(72/734*100%);
+  min-height: 106px;
   width: 100%;
   display: flex;
   align-items: center;
 
   background-color: #0064EB;
+}
+
+.header__wrapper {
+  width: 100%;
+  max-width: 1254px;
+
+  display: flex;
+  margin: 0 auto;
 }
 
 .header__logo {
@@ -15,4 +24,10 @@
   width: 100%;
   max-width: 500px;
   padding: 0 22px 0 22px;
+}
+
+@media (max-width: 550px){
+  .header__logo {
+    padding-left: 22px;
+  }
 }

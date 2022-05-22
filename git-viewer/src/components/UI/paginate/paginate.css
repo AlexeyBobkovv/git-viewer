@@ -2,15 +2,10 @@
 .repos__pagination {
   display: flex;
   justify-content: end;
-
-  font-family: 'Inter';
-  font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;
   color: #808080;
-
-  margin-bottom: 40px;
 }
 
 .repos__pagination p {
@@ -64,23 +59,35 @@ list-style: none;
 }
 
 
-.page-button {
+.arrow-button {
   cursor: pointer;
 }
 
-.page-button .page-link {
-  position: relative;
+.arrow-button .page-link {
   display: block;
-  color: #0064EB;
+
+  width: 7px;
+  height:  7px;
+  border-top: 5px solid #0064EB;
+  border-right: 5px solid #0064EB;
+  position: relative;
   text-decoration: none;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  padding: .375rem .75rem;
-
-  font-weight: bold;
+  padding: 4px 4px;
 }
 
-.page-button.disabled .page-link {
-  color: #808080;
+.arrow-button_right .page-link {
+  transform: rotate(45deg);
+  margin-left: 29px;
+}
+.arrow-button_left .page-link {
+  transform: rotate(-135deg);
+  margin-right: 29px;
+}
+
+.arrow-button.disabled .page-link {
+  border-top: 5px solid #808080;
+  border-right: 5px solid #808080;
 }
 
 @media (max-width: 769px){

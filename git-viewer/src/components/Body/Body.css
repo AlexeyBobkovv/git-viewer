@@ -29,8 +29,6 @@
 }
 
 .states {
-  font-family: 'Inter';
-  font-style: normal;
   font-weight: 400;
   font-size: 22px;
   line-height: 140%;
@@ -40,6 +38,17 @@
   color: #808080;
 
   margin: 0;
+}
+
+.main-content__states-wrapper {
+  width: 100%;
+  max-width: 1254px;
+  height: 90vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 28px 69px 29px 56px;
 }
 
 .states_initial {

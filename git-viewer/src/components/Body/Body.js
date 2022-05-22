@@ -7,16 +7,14 @@ import BodyUserMain from "./User/UserMain";
 export default function Body({ userInfo, pageCondition, search }) {
   return (
     <main className="main-content">
-      <div className="main-content__wrapper">
-        <CallToPageState
-          isError={pageCondition.isError}
-          isLoading={pageCondition.isLoading}
-          isUserInfo={userInfo}
-        />
-        {userInfo && !pageCondition.isLoading && !pageCondition.isError ? (
-          <BodyUserMain userInfo={userInfo} search={search} />
-        ) : null}
-      </div>
+      <CallToPageState
+        isError={pageCondition.isError}
+        isLoading={pageCondition.isLoading}
+        isUserInfo={userInfo}
+      />
+      {userInfo && !pageCondition.isLoading && !pageCondition.isError ? (
+        <BodyUserMain userInfo={userInfo} search={search} />
+      ) : null}
     </main>
   );
 }
